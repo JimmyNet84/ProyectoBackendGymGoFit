@@ -3,7 +3,12 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import sequelize from './src/config/database.js';
 import authRoutes from './src/routes/authRoutes.js';
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt';
+import rolRoutes from './src/routes/rolRoutes.js';
+import usuarioRoutes from './src/routes/usuarioRoutes.js'
+import socioRoutes from './src/routes/socioRoutes.js';
+import membresiaRoutes from './src/routes/membresiaRoutes.js';
+import asistenciaRoutes from './src/routes/asistenciaRoutes.js';
 
 
 dotenv.config();
@@ -22,6 +27,12 @@ app.get('/', (req, res) => {
 
 // Rutas
 app.use('/api/auth', authRoutes);
+
+app.use('/api/roles', rolRoutes);
+app.use('/api/usuarios', usuarioRoutes);
+app.use('/api/socios', socioRoutes);
+app.use('/api/membresias', membresiaRoutes);
+app.use('/api/asistencias', asistenciaRoutes);
 
 // Función para probar la conexión a la base de datos
 const iniciarServidor = async () => {
