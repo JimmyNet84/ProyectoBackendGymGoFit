@@ -9,7 +9,10 @@ import usuarioRoutes from './src/routes/usuarioRoutes.js'
 import socioRoutes from './src/routes/socioRoutes.js';
 import membresiaRoutes from './src/routes/membresiaRoutes.js';
 import asistenciaRoutes from './src/routes/asistenciaRoutes.js';
-
+import entrenadorRoutes from './src/routes/entrenadorRoutes.js';
+import claseRoutes from './src/routes/claseRoutes.js';
+import dashboardRoutes from './src/routes/dashboardRoutes.js';
+import inscripcionRoutes from './src/routes/inscripcionesRoutes.js';
 
 dotenv.config();
 
@@ -33,6 +36,12 @@ app.use('/api/usuarios', usuarioRoutes);
 app.use('/api/socios', socioRoutes);
 app.use('/api/membresias', membresiaRoutes);
 app.use('/api/asistencias', asistenciaRoutes);
+
+app.use('/api/entrenadores', entrenadorRoutes);
+app.use('/api/clases', claseRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+
+app.use('/api/inscripciones', inscripcionRoutes);
 
 // Función para probar la conexión a la base de datos
 const iniciarServidor = async () => {
