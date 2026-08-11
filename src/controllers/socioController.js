@@ -27,7 +27,7 @@ export const crearSocio = async (req, res) => {
       dni,
       telefono,
       email,
-      estado: 'Vencido', // Nace sin membresía activa hasta que se le asigne una
+      estado: 'Inactivo', // Nace sin membresía activa hasta que se le asigne una
       fecha_registro: new Date().toISOString().split('T')[0],
     });
     res.status(201).json(nuevoSocio);
